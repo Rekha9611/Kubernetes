@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  creationTimestamp: null
+  name: test1
+spec:
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+      name: test1
+    spec:
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          containers:
+          - image: hello-world
+            name: test1
+            resources: {}
+          restartPolicy: OnFailure
+  schedule: '* * * * *'
+status: {}
