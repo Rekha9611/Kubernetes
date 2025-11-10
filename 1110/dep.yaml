@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: demo
+  name: demo
+spec:
+  replicas: 3 
+  selector:
+    matchLabels:
+      app: demo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: demo
+    spec:
+      containers:
+      - image: adikarthik/demo
+        name: demo
+        readinessProbe:
+          tcpSocket:
+            port: 9090
+          timeoutSeconds: 1
+          failureThreshold: 3
+          periodSeconds: 30
+          initialDelaySeconds: 30
+        livenessProbe:
+          httpGet:
+            path: /demo1/api/v1/projects
+            port: 9090
+          timeoutSeconds: 1
+          failureThreshold: 3
+          periodSeconds: 30
+          initialDelaySeconds: 30
+        resources: {} 
+status: {}

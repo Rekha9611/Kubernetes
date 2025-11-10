@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv1
+spec:
+  capacity:
+    storage: 10Gi
+  hostPath:
+    path: /opt/pv/vol1
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: manual
+
