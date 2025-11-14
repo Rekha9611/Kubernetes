@@ -1,0 +1,9 @@
+resources:
+- ../base
+
+patches:
+- path: replicas.yaml
+
+configMapGenerator:
+- name: testcm
+  env: config.properties

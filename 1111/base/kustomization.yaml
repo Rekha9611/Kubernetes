@@ -1,0 +1,11 @@
+resources:
+- dep.yaml
+- service.yaml
+
+commonLabels:
+  name: test123
+commonAnnotations:
+  name: test123
+namePrefix: test-
+nameSuffix: -version1
+
