@@ -1,7 +1,7 @@
 resources:
   - ../base
 
-namespace: Kustom
+namespace: kustomapp  
 
 patchesStrategicMerge:
   - replicas.yaml
